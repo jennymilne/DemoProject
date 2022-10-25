@@ -62,14 +62,13 @@ public class LoginUserInterface implements ActionListener{
 
     }
 
-    // actionPerformed should include an Authenticate object? (SRP)
 
-
-
-    public void actionPerformed(ActionEvent e) {
+    public String actionPerformed(ActionEvent e) {          // this will not let me return a string
         String inputUsername = userText.getText();
         String inputPassword = passwordText.getText();
         System.out.println("click");
+        return inputUsername;
+
     }
 
 
