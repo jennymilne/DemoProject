@@ -11,7 +11,7 @@ public class Main {
         };
 
         LoginUserInterface loginUserInterface = new LoginUserInterface();
-//      loginUserInterface.actionPerformed();
+        loginUserInterface.actionPerformed();
         Authenticate authenticate = new Authenticate();
         authenticate.compareCredentials();
 
