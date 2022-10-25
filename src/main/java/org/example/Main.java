@@ -1,13 +1,25 @@
 package org.example;
 
+import java.awt.event.ActionEvent;
+
 public class Main {
     public static void main(String[] args) {
-        Athlete[] athletes = new Athlete[] {
-                new Athlete("jenny", "java"),
-                new Athlete("mofarah", "olympics")
+
+        AthleteLoginDetails[] athleteLoginDetails = new AthleteLoginDetails[] {
+                new AthleteLoginDetails("jenny", "java"),
+                new AthleteLoginDetails("mofarah", "olympics")
         };
-        System.out.println(athletes);
-        LoginInterface loginPage = new LoginInterface();
+
+        LoginUserInterface loginUserInterface = new LoginUserInterface();
+//      loginUserInterface.actionPerformed();
+        Authenticate authenticate = new Authenticate();
+        authenticate.compareCredentials();
+
+
+
+
+
+
 
 
 

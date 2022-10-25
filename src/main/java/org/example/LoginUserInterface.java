@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
 
-public class LoginInterface implements ActionListener{
+public class LoginUserInterface implements ActionListener{
 
     private static JLabel userLabel;
     private static JTextField userText;
@@ -19,7 +19,7 @@ public class LoginInterface implements ActionListener{
     private static JButton button;
     private static JLabel success;
 
-    public LoginInterface() {
+    public LoginUserInterface() {
 
         JFrame frame = new JFrame();
 
@@ -62,15 +62,27 @@ public class LoginInterface implements ActionListener{
 
     }
 
+    // actionPerformed should include an Authenticate object? (SRP)
+
+
+
     public void actionPerformed(ActionEvent e) {
-        String user = userText.getText();
-        String password = passwordText.getText();
-        System.out.println(user + ", " + password);
-        if (user.equals("Jenny") && password.equals("synalogik")) {
-            success.setText("Login successful");
-        } else {
-            success.setText("");
-        }
+        String inputUsername = userText.getText();
+        String inputPassword = passwordText.getText();
+        System.out.println("click");
     }
+
+
+
+//    public void actionPerformed(ActionEvent e, String username, String password) {
+//        username = userText.getText();
+//        password = passwordText.getText();
+//        System.out.println(username + ", " + password);
+//        if (username.equals("jenny") && password.equals("synalogik")) {
+//            success.setText("Login successful");
+//        } else {
+//            success.setText("");
+//        }
+//    }
 
 }
