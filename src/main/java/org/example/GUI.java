@@ -1,16 +1,13 @@
 package org.example;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.JLabel;
-import javax.swing.JTextField;
-import javax.swing.JPasswordField;
-import javax.swing.JButton;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JOptionPane;
 
 
-public class LoginUserInterface implements ActionListener{
+public class GUI extends Component implements ActionListener{
 
     private static JLabel userLabel;
     private static JTextField userText;
@@ -19,7 +16,7 @@ public class LoginUserInterface implements ActionListener{
     private static JButton button;
     private static JLabel success;
 
-    public LoginUserInterface() {
+    public static void main(String[] args) {
 
         JFrame frame = new JFrame();
 
@@ -51,7 +48,7 @@ public class LoginUserInterface implements ActionListener{
 
         button = new JButton("Login");
         button.setBounds(10, 80, 80, 25);
-        button.addActionListener(this::actionPerformed);
+        button.addActionListener(new GUI());
         panel.add(button);
 
         success = new JLabel("");
@@ -62,27 +59,15 @@ public class LoginUserInterface implements ActionListener{
 
     }
 
-    // actionPerformed should include an Authenticate object? (SRP)
-
-
-
     public void actionPerformed(ActionEvent e) {
         String inputUsername = userText.getText();
-        String inputPassword = passwordText.getText();
-        System.out.println("click");
+        String inputPassword = String.valueOf(passwordText.getText());
+
+        if("".equals(inputPassword) || "".equals(inputUsername)) {
+            JOptionPane.showMessageDialog(this, "Name of password is empty!", "Incorrect Input", JOptionPane.ERROR_MESSAGE);
+        } else {
+            JOptionPane.showMessageDialog(this, "Hello " + inputUsername + " with password " + inputPassword, "Login Successful", JOptionPane.PLAIN_MESSAGE);
+        }
     }
-
-
-
-//    public void actionPerformed(ActionEvent e, String username, String password) {
-//        username = userText.getText();
-//        password = passwordText.getText();
-//        System.out.println(username + ", " + password);
-//        if (username.equals("jenny") && password.equals("synalogik")) {
-//            success.setText("Login successful");
-//        } else {
-//            success.setText("");
-//        }
-//    }
 
 }
