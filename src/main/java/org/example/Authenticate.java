@@ -1,8 +1,5 @@
 package org.example;
 
-import lombok.*;
-import org.example.LoginUserInterface;
-
 public class Authenticate {
     String username;
     String password;
@@ -14,25 +11,19 @@ public class Authenticate {
         this.password = password;
 
     }
-
     public Authenticate(Authenticate source) {
         this.username = source.username;
         this.password = source.password;
 
     }
-
-
     public String getUsername() {
 
         return this.username;
     }
-
     public String getPassword() {
 
         return this.password;
     }
-
-
     public void setUsername(String username) {
 
         this.username = username;
@@ -41,13 +32,9 @@ public class Authenticate {
 
         this.password = password;
     }
-
     public String toString() {
-
         return this.username + " : " + this.password;
     }
-
-
 
     public void compareCredentials() {
         if (inputUsername.equals(username)) { //null pointer exception here - all fields are null

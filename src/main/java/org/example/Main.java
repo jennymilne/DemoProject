@@ -13,23 +13,10 @@ public class Main {
         String username = jennyLogin.getUsername();
         String password = jennyLogin.getPassword();
 
-        LoginUserInterface loginUserInterface = new LoginUserInterface();
-        Authenticate authenticate = new Authenticate(jennyLogin.getUsername(), jennyLogin.getPassword());
-        authenticate.compareCredentials();
+        GUI loginUI = new GUI();
 
-
-
-//        if (loginUserInterface.actionPerformed() == true) {
-//            Authenticate authenticate = new Authenticate(jennyLogin.getUsername(), jennyLogin.getPassword());
-//            authenticate.compareCredentials();
-//        }
-
-
-
-
-
-
-
+//        Authenticate authenticate = new Authenticate(username, password);
+//        authenticate.compareCredentials();
 
 
 
